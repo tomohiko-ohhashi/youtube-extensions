@@ -1,5 +1,13 @@
 'use strict';
 
+// 画面の文言は _locales の翻訳から入れる（Chrome の表示言語が日本語なら日本語、それ以外は英語）
+const t = (name, substitutions) => chrome.i18n.getMessage(name, substitutions);
+document.documentElement.lang = chrome.i18n.getUILanguage();
+document.title = t('optionsTitle');
+for (const el of document.querySelectorAll('[data-i18n]')) {
+  el.textContent = t(el.dataset.i18n);
+}
+
 const currentEl = document.getElementById('current');
 const recordButton = document.getElementById('record');
 const resetButton = document.getElementById('reset');
@@ -27,14 +35,14 @@ function showStatus(text) {
 async function saveShortcut(shortcut) {
   await chrome.storage.sync.set({ shortcut });
   render({ shortcut, showToast: showToastInput.checked });
-  let message = `保存しました: ${Shortcut.format(shortcut)}`;
-  if (Shortcut.isPrintable(shortcut)) message += '（チャットなどの入力欄では反応しません）';
+  let message = t('statusSaved', Shortcut.format(shortcut));
+  if (Shortcut.isPrintable(shortcut)) message += t('statusPrintableNote');
   showStatus(message);
 }
 
 function setRecording(on) {
   recording = on;
-  recordButton.textContent = on ? 'キーを待っています…' : 'キーを変更';
+  recordButton.textContent = t(on ? 'recordingButton' : 'recordButton');
   recordingHint.hidden = !on;
   currentEl.classList.toggle('recording', on);
 }
@@ -78,7 +86,7 @@ presetSelect.addEventListener('change', () => {
 
 showToastInput.addEventListener('change', async () => {
   await chrome.storage.sync.set({ showToast: showToastInput.checked });
-  showStatus(showToastInput.checked ? '通知を表示します' : '通知を表示しません');
+  showStatus(t(showToastInput.checked ? 'statusToastOn' : 'statusToastOff'));
 });
 
 chrome.storage.sync.get(DEFAULT_SETTINGS).then(render);

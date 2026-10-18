@@ -1,69 +1,73 @@
-# YouTube ライブジャンプ
+# YouTube Live Jump
 
-キーボードのキーひとつで、YouTube のプレーヤー左下の「ライブ」ボタンや再生ボタンを押せるようにする Chrome 拡張機能です。
-初期設定は **F18** キーです。Stream Deck、AutoHotkey、マクロキーボードなどから送って使います。
+English | [日本語](README.ja.md)
 
-## インストール
+A Chrome extension that lets one keyboard key press the “Live” button or the play button in the YouTube player.
+The default key is **F18**. Send it from a Stream Deck, AutoHotkey, a macro keyboard, or similar.
 
-1. このフォルダ（`youtube-live-hotkey`）をパソコンに置きます。
-2. Chrome で `chrome://extensions` を開きます。
-3. 右上の「デベロッパー モード」をオンにします。
-4. 「パッケージ化されていない拡張機能を読み込む」を押して、`youtube-live-hotkey` フォルダを選びます。
-5. すでに開いている YouTube のタブは、一度再読み込みしてください。
+## Install
 
-新しい版に更新したときは、`chrome://extensions` でこの拡張機能の再読み込みボタン（↻）を押してから、YouTube のタブを再読み込みしてください。
+1. Put this folder (`youtube-live-hotkey`) on your computer.
+2. Open `chrome://extensions` in Chrome.
+3. Turn on “Developer mode” in the top right.
+4. Click “Load unpacked” and choose the `youtube-live-hotkey` folder.
+5. Reload any YouTube tabs that were already open.
 
-## 使い方
+After updating to a new version, click this extension's reload button (↻) in `chrome://extensions`, then reload your YouTube tabs.
 
-設定したキー（初期設定: F18）を押すと、そのときの状態に合わせて次のように動きます。
+## Usage
 
-| 状態 | キーを押したときの動作 |
+Press your key (F18 by default) and it acts on what the player is doing:
+
+| Player state | What the key does |
 | --- | --- |
-| ライブ配信で一時停止中 | 「ライブ」ボタンを押して、最新の配信位置から再生 |
-| ライブ配信で再生中 | 一時停止 |
-| 通常の動画 | 再生 / 一時停止の切り替え |
+| Live stream, paused | Presses the “Live” button and resumes from the latest point |
+| Live stream, playing | Pauses |
+| Regular video | Toggles play / pause |
 
-- チャット欄に入力中でも反応します。
-- 押したときは、プレーヤーの上部に「ライブへ移動しました」「一時停止しました」などの通知が出ます。
-- 広告の再生中は「ライブ」ボタンは押さず、再生 / 一時停止だけを切り替えます。
+- It works even while you're typing in live chat.
+- A short notice such as “Jumped to live” or “Paused” appears at the top of the player.
+- During ads, the “Live” button isn't pressed; the key only toggles play / pause.
 
-## 設定
+## Settings
 
-ツールバーの拡張機能アイコン（または `chrome://extensions` の「詳細」→「拡張機能のオプション」）から設定画面を開けます。
+Open the settings from the extension's toolbar icon (or **Details → Extension options** in `chrome://extensions`).
+The settings page follows Chrome's display language: Japanese if Chrome is in Japanese, English otherwise.
 
-- **キーを変更**: ボタンを押してから、割り当てたいキーを押します（Ctrl や Shift との組み合わせも可）。Esc でキャンセルできます。
-- **一覧から選ぶ**: F13〜F24 は普通のキーボードにないため、一覧から直接選べます。
-- **F18 に戻す**: 初期設定に戻します。
-- **通知を表示する**: キーを押したときの画面上の通知を切り替えます。
+- **Change key**: click it, then press the key you want (combinations with Ctrl, Shift, etc. work too). Press Esc to cancel.
+- **Pick from list**: F13–F24 aren't on regular keyboards, so you can pick them from a list.
+- **Reset to F18**: restores the default.
+- **Show a notice**: turns the on-screen notice on or off.
 
-設定は保存した時点で、開いている YouTube のタブにもすぐ反映されます。
+Changes apply right away to open YouTube tabs.
 
-> 文字キー（例: `Q`）を割り当てた場合、チャット欄や検索欄で入力しているときは文字の入力を優先して反応しません。
+> If you assign a character key (such as `Q`), it won't trigger while you're typing in chat or the search box.
 
-## F18 キーを送る例
+## Sending F18
 
-F13〜F24 は普通のキーボードにはないので、ツールから送ります。
+F13–F24 aren't on regular keyboards, so send them from a tool.
 
-**AutoHotkey v2**（Ctrl + Alt + L を F18 に変換する例）
+**AutoHotkey v2** (turns Ctrl + Alt + L into F18)
 
 ```ahk
 ^!l::Send "{F18}"
 ```
 
-Stream Deck などのマクロ機器では、ホットキーの機能で F18 を割り当ててください。
+On a Stream Deck or other macro device, assign F18 with its hotkey action.
 
-## 注意
+## Notes
 
-- キーが届くのは、Chrome で YouTube のタブを表示していて、そのページにフォーカスがあるときだけです（OBS など別のアプリを操作中は届きません）。
-- 別ウィンドウに切り離したチャット（ポップアウト チャット）からは操作できません。
-- YouTube の画面の作りが変わると動かなくなる可能性があります。内部では、ライブ配信中に表示される `.ytp-time-display.ytp-live` の中の `button.ytp-live-badge`（「ライブ」ボタン）と、再生ボタン `.ytp-play-button` をクリックしています。
+- Keys only arrive while a YouTube tab is showing in Chrome and the page has focus (not while you're using another app such as OBS).
+- It doesn't work from a popped-out chat window.
+- It may stop working if YouTube changes its player. Internally it clicks `button.ytp-live-badge` (the “Live” button) inside `.ytp-time-display.ytp-live`, which appears during live streams, and the play button `.ytp-play-button`.
 
-## ファイル構成
+## Files
 
-| ファイル | 内容 |
+| File | Purpose |
 | --- | --- |
-| `manifest.json` | 拡張機能の定義（Manifest V3） |
-| `common.js` | 初期設定とショートカットキーの判定処理（下の 2 つで共有） |
-| `content.js` | YouTube のページで動き、キーを受け取って「ライブ」ボタンや再生ボタンを押す |
-| `options.html` / `options.css` / `options.js` | 設定画面（ツールバーのポップアップと兼用） |
-| `icons/` | アイコン |
+| `manifest.json` | Extension definition (Manifest V3) |
+| `common.js` | Default settings and shortcut matching (shared by the two files below) |
+| `content.js` | Runs on YouTube, receives the key, and presses the “Live” or play button |
+| `options.html` / `options.css` / `options.js` | Settings page (also used as the toolbar popup) |
+| `_locales/en`, `_locales/ja` | UI text (English and Japanese) |
+| `icons/` | Icons |

@@ -56,7 +56,7 @@ function togglePlay(player, video) {
 
 function handleShortcut(player) {
   if (!player) {
-    notify(null, 'プレーヤーが見つかりません');
+    notify(null, chrome.i18n.getMessage('toastNoPlayer'));
     return;
   }
   const video = player.querySelector('video');
@@ -65,10 +65,10 @@ function handleShortcut(player) {
   // 広告の再生中は「ライブ」ボタンを押さず、再生 / 一時停止だけを切り替える
   if (badge && paused && !player.classList.contains('ad-showing')) {
     pressLiveButton(badge);
-    notify(player, 'ライブへ移動しました');
+    notify(player, chrome.i18n.getMessage('toastLive'));
   } else {
     togglePlay(player, video);
-    notify(player, paused ? '再生しました' : '一時停止しました');
+    notify(player, chrome.i18n.getMessage(paused ? 'toastPlaying' : 'toastPaused'));
   }
 }
 
