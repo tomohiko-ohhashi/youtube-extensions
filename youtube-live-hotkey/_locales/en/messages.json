@@ -1,0 +1,88 @@
+{
+  "extName": {
+    "message": "YouTube Live Jump"
+  },
+  "extDescription": {
+    "message": "One key (F18 by default) jumps a paused YouTube live stream back to live, and plays or pauses everything else."
+  },
+  "actionTitle": {
+    "message": "YouTube Live Jump settings"
+  },
+
+  "toastLive": {
+    "message": "Jumped to live"
+  },
+  "toastPaused": {
+    "message": "Paused"
+  },
+  "toastPlaying": {
+    "message": "Playing"
+  },
+  "toastNoPlayer": {
+    "message": "No video player found"
+  },
+
+  "optionsTitle": {
+    "message": "YouTube Live Jump settings"
+  },
+  "behaviorLivePaused": {
+    "message": "Live stream, paused: presses the “Live” button and resumes from the latest point"
+  },
+  "behaviorLivePlaying": {
+    "message": "Live stream, playing: pauses"
+  },
+  "behaviorVideo": {
+    "message": "Regular video: toggles play / pause"
+  },
+  "shortcutHeading": {
+    "message": "Shortcut key"
+  },
+  "recordButton": {
+    "message": "Change key"
+  },
+  "recordingButton": {
+    "message": "Waiting for a key…"
+  },
+  "resetButton": {
+    "message": "Reset to F18"
+  },
+  "recordingHint": {
+    "message": "Press the key you want to use (Esc to cancel)"
+  },
+  "presetLabel": {
+    "message": "Pick from list"
+  },
+  "showToastLabel": {
+    "message": "Show a notice on screen when the key is pressed"
+  },
+  "statusSaved": {
+    "message": "Saved: $KEY$",
+    "placeholders": {
+      "key": { "content": "$1", "example": "F18" }
+    }
+  },
+  "statusPrintableNote": {
+    "message": " (won't trigger while typing in chat or other text fields)"
+  },
+  "statusToastOn": {
+    "message": "Notices on"
+  },
+  "statusToastOff": {
+    "message": "Notices off"
+  },
+  "troubleSummary": {
+    "message": "Not working?"
+  },
+  "troubleFunctionKeys": {
+    "message": "F13–F24 aren't on regular keyboards. Send them from a Stream Deck, AutoHotkey, or your keyboard's macro feature."
+  },
+  "troubleFocus": {
+    "message": "Keys only arrive while a YouTube tab is showing in Chrome and the page has focus."
+  },
+  "troubleReload": {
+    "message": "Reload any YouTube tabs that were open before you installed the extension."
+  },
+  "troubleAds": {
+    "message": "During ads, the “Live” button isn't pressed; the key only toggles play / pause."
+  }
+}

@@ -1,28 +1,29 @@
 <!doctype html>
-<html lang="ja">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>YouTube ライブジャンプの設定</title>
+  <title></title>
   <link rel="stylesheet" href="options.css">
 </head>
 <body>
-  <h1>YouTube ライブジャンプ</h1>
+  <!-- 文言は options.js が _locales の翻訳から入れる -->
+  <h1 data-i18n="extName"></h1>
   <ul class="lead">
-    <li>ライブ配信で一時停止中: 「ライブ」ボタンを押して、最新の配信位置から再生</li>
-    <li>ライブ配信で再生中: 一時停止</li>
-    <li>通常の動画: 再生 / 一時停止の切り替え</li>
+    <li data-i18n="behaviorLivePaused"></li>
+    <li data-i18n="behaviorLivePlaying"></li>
+    <li data-i18n="behaviorVideo"></li>
   </ul>
 
   <section>
-    <h2>ショートカットキー</h2>
+    <h2 data-i18n="shortcutHeading"></h2>
     <div class="row">
       <kbd id="current">F18</kbd>
-      <button type="button" id="record">キーを変更</button>
-      <button type="button" id="reset" class="secondary">F18 に戻す</button>
+      <button type="button" id="record" data-i18n="recordButton"></button>
+      <button type="button" id="reset" class="secondary" data-i18n="resetButton"></button>
     </div>
-    <p id="recording-hint" class="hint" hidden>割り当てたいキーを押してください（Esc でキャンセル）</p>
+    <p id="recording-hint" class="hint" data-i18n="recordingHint" hidden></p>
     <div class="row">
-      <label for="preset">一覧から選ぶ</label>
+      <label for="preset" data-i18n="presetLabel"></label>
       <select id="preset">
         <option value="">-</option>
         <option>F13</option>
@@ -44,19 +45,19 @@
   <section>
     <label class="check">
       <input type="checkbox" id="show-toast">
-      キーを押したときに画面に通知を表示する
+      <span data-i18n="showToastLabel"></span>
     </label>
   </section>
 
   <p id="status" class="status" role="status"></p>
 
   <details>
-    <summary>うまく動かないときは</summary>
+    <summary data-i18n="troubleSummary"></summary>
     <ul>
-      <li>F13〜F24 は普通のキーボードにはないキーです。Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。</li>
-      <li>キーが届くのは、Chrome で YouTube のタブを表示していて、そのページにフォーカスがあるときだけです。</li>
-      <li>拡張機能を入れる前から開いていた YouTube のタブは、一度再読み込みしてください。</li>
-      <li>広告の再生中は「ライブ」ボタンは押さず、再生 / 一時停止だけを切り替えます。</li>
+      <li data-i18n="troubleFunctionKeys"></li>
+      <li data-i18n="troubleFocus"></li>
+      <li data-i18n="troubleReload"></li>
+      <li data-i18n="troubleAds"></li>
     </ul>
   </details>
 

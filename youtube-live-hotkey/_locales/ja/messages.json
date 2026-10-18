@@ -1,0 +1,88 @@
+{
+  "extName": {
+    "message": "YouTube ライブジャンプ"
+  },
+  "extDescription": {
+    "message": "キーボードのキー（初期設定: F18）で、ライブ配信の一時停止中は「ライブ」ボタンを押して最新の配信位置へ移動し、それ以外は再生 / 一時停止を切り替えます。"
+  },
+  "actionTitle": {
+    "message": "YouTube ライブジャンプの設定"
+  },
+
+  "toastLive": {
+    "message": "ライブへ移動しました"
+  },
+  "toastPaused": {
+    "message": "一時停止しました"
+  },
+  "toastPlaying": {
+    "message": "再生しました"
+  },
+  "toastNoPlayer": {
+    "message": "プレーヤーが見つかりません"
+  },
+
+  "optionsTitle": {
+    "message": "YouTube ライブジャンプの設定"
+  },
+  "behaviorLivePaused": {
+    "message": "ライブ配信で一時停止中: 「ライブ」ボタンを押して、最新の配信位置から再生"
+  },
+  "behaviorLivePlaying": {
+    "message": "ライブ配信で再生中: 一時停止"
+  },
+  "behaviorVideo": {
+    "message": "通常の動画: 再生 / 一時停止の切り替え"
+  },
+  "shortcutHeading": {
+    "message": "ショートカットキー"
+  },
+  "recordButton": {
+    "message": "キーを変更"
+  },
+  "recordingButton": {
+    "message": "キーを待っています…"
+  },
+  "resetButton": {
+    "message": "F18 に戻す"
+  },
+  "recordingHint": {
+    "message": "割り当てたいキーを押してください（Esc でキャンセル）"
+  },
+  "presetLabel": {
+    "message": "一覧から選ぶ"
+  },
+  "showToastLabel": {
+    "message": "キーを押したときに画面に通知を表示する"
+  },
+  "statusSaved": {
+    "message": "保存しました: $KEY$",
+    "placeholders": {
+      "key": { "content": "$1", "example": "F18" }
+    }
+  },
+  "statusPrintableNote": {
+    "message": "（チャットなどの入力欄では反応しません）"
+  },
+  "statusToastOn": {
+    "message": "通知を表示します"
+  },
+  "statusToastOff": {
+    "message": "通知を表示しません"
+  },
+  "troubleSummary": {
+    "message": "うまく動かないときは"
+  },
+  "troubleFunctionKeys": {
+    "message": "F13〜F24 は普通のキーボードにはないキーです。Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。"
+  },
+  "troubleFocus": {
+    "message": "キーが届くのは、Chrome で YouTube のタブを表示していて、そのページにフォーカスがあるときだけです。"
+  },
+  "troubleReload": {
+    "message": "拡張機能を入れる前から開いていた YouTube のタブは、一度再読み込みしてください。"
+  },
+  "troubleAds": {
+    "message": "広告の再生中は「ライブ」ボタンは押さず、再生 / 一時停止だけを切り替えます。"
+  }
+}
