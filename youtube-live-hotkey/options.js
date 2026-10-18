@@ -39,7 +39,7 @@ async function saveShortcut(shortcut) {
   await chrome.storage.sync.set({ shortcut });
   render({ shortcut, showToast: showToastInput.checked });
   let message = t('statusSaved', Shortcut.format(shortcut));
-  if (Shortcut.isPrintable(shortcut)) message += t('statusPrintableNote');
+  if (Shortcut.isTypingKey(shortcut)) message += t('statusTypingKeyNote');
   showStatus(message);
 }
 

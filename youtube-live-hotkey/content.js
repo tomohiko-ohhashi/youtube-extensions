@@ -48,7 +48,8 @@ function togglePlay(player, video) {
   if (button) {
     button.click();
   } else if (video?.paused) {
-    video.play();
+    // 自動再生の制限などで再生できなかったときは何もしない
+    video.play().catch(() => {});
   } else {
     video?.pause();
   }
@@ -79,8 +80,8 @@ function isEditable(el) {
 
 function onKeyDown(e) {
   if (e.repeat || e.isComposing || !Shortcut.matches(e, settings.shortcut)) return;
-  // 文字キーを割り当てた場合は、チャットや検索欄での入力を邪魔しない
-  if (Shortcut.isPrintable(settings.shortcut) && isEditable(e.composedPath()[0])) return;
+  // 文字キーや Enter などを割り当てた場合は、チャットや検索欄での入力を邪魔しない
+  if (Shortcut.isTypingKey(settings.shortcut) && isEditable(e.composedPath()[0])) return;
 
   e.preventDefault();
   e.stopImmediatePropagation();

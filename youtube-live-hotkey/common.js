@@ -19,6 +19,12 @@ const Shortcut = (() => {
     'Control', 'Alt', 'AltGraph', 'Shift', 'Meta', 'OS',
     'CapsLock', 'Fn', 'FnLock', 'Hyper', 'Super',
   ]);
+  // 入力欄で、文字の削除や確定、カーソル移動に使うキー
+  const EDITING_KEYS = new Set([
+    'Enter', 'Tab', 'Backspace', 'Delete',
+    'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown',
+    'Home', 'End', 'PageUp', 'PageDown',
+  ]);
 
   function fromEvent(e) {
     return {
@@ -47,9 +53,10 @@ const Shortcut = (() => {
     return !!s.key && e.key === s.key;
   }
 
-  // 修飾キーなしの文字キー（入力欄で打つと文字になるキー）かどうか
-  function isPrintable(s) {
-    return !s.ctrlKey && !s.altKey && !s.metaKey && typeof s.key === 'string' && s.key.length === 1;
+  // 入力欄で文字の入力や編集に使うキー（修飾キーなしの文字キーや Enter・矢印キーなど）かどうか
+  function isTypingKey(s) {
+    if (s.ctrlKey || s.altKey || s.metaKey || typeof s.key !== 'string') return false;
+    return s.key.length === 1 || EDITING_KEYS.has(s.key);
   }
 
   function keyLabel(s) {
@@ -70,5 +77,5 @@ const Shortcut = (() => {
     return parts.join(' + ');
   }
 
-  return { fromEvent, isModifierOnly, matches, isPrintable, format };
+  return { fromEvent, isModifierOnly, matches, isTypingKey, format };
 })();
