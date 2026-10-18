@@ -41,16 +41,22 @@
     "message": "Change key"
   },
   "recordingButton": {
-    "message": "Waiting for a key…"
+    "message": "Cancel"
   },
   "resetButton": {
     "message": "Reset to F18"
   },
   "recordingHint": {
-    "message": "Press the key you want to use (Esc to cancel)"
+    "message": "Press the key you want to use"
   },
   "presetLabel": {
     "message": "Pick from list"
+  },
+  "presetGroupExtra": {
+    "message": "F13–F24"
+  },
+  "presetGroupUnused": {
+    "message": "F1–F12 not used by Chrome"
   },
   "showToastLabel": {
     "message": "Show a notice on screen when the key is pressed"
@@ -74,7 +80,7 @@
     "message": "Not working?"
   },
   "troubleFunctionKeys": {
-    "message": "F13–F24 aren't on regular keyboards. Send them from a Stream Deck, AutoHotkey, or your keyboard's macro feature."
+    "message": "F13–F24 aren't on regular keyboards. Send them from a Stream Deck, AutoHotkey, or your keyboard's macro feature. F2, F4, F8, and F9 work too, since Chrome doesn't use them."
   },
   "troubleFocus": {
     "message": "Keys only arrive while a YouTube tab is showing in Chrome and the page has focus."
