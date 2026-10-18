@@ -4,8 +4,8 @@
 
 const DEFAULT_SETTINGS = Object.freeze({
   shortcut: Object.freeze({
-    code: 'F18',
-    key: 'F18',
+    code: 'F2',
+    key: 'F2',
     ctrlKey: false,
     altKey: false,
     shiftKey: false,

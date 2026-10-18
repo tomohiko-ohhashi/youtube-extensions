@@ -3,7 +3,7 @@
     "message": "YouTube Live Jump"
   },
   "extDescription": {
-    "message": "One key (F18 by default) jumps a paused YouTube live stream back to live, and plays or pauses everything else."
+    "message": "One key (F2 by default) jumps a paused YouTube live stream back to live, and plays or pauses everything else."
   },
   "actionTitle": {
     "message": "YouTube Live Jump settings"
@@ -44,7 +44,7 @@
     "message": "Cancel"
   },
   "resetButton": {
-    "message": "Reset to F18"
+    "message": "Reset to F2"
   },
   "recordingHint": {
     "message": "Press the key you want to use"
@@ -64,7 +64,7 @@
   "statusSaved": {
     "message": "Saved: $KEY$",
     "placeholders": {
-      "key": { "content": "$1", "example": "F18" }
+      "key": { "content": "$1", "example": "F2" }
     }
   },
   "statusPrintableNote": {
