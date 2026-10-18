@@ -41,16 +41,22 @@
     "message": "キーを変更"
   },
   "recordingButton": {
-    "message": "キーを待っています…"
+    "message": "キャンセル"
   },
   "resetButton": {
     "message": "F18 に戻す"
   },
   "recordingHint": {
-    "message": "割り当てたいキーを押してください（Esc でキャンセル）"
+    "message": "割り当てたいキーを押してください"
   },
   "presetLabel": {
     "message": "一覧から選ぶ"
+  },
+  "presetGroupExtra": {
+    "message": "F13〜F24"
+  },
+  "presetGroupUnused": {
+    "message": "F1〜F12（Chrome で使われていないキー）"
   },
   "showToastLabel": {
     "message": "キーを押したときに画面に通知を表示する"
@@ -74,7 +80,7 @@
     "message": "うまく動かないときは"
   },
   "troubleFunctionKeys": {
-    "message": "F13〜F24 は普通のキーボードにはないキーです。Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。"
+    "message": "F13〜F24 は普通のキーボードにはないキーです。Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。Chrome で使われていない F2・F4・F8・F9 も選べます。"
   },
   "troubleFocus": {
     "message": "キーが届くのは、Chrome で YouTube のタブを表示していて、そのページにフォーカスがあるときだけです。"

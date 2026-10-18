@@ -15,29 +15,39 @@
   </ul>
 
   <section>
-    <h2 data-i18n="shortcutHeading"></h2>
-    <div class="row">
-      <kbd id="current">F18</kbd>
-      <button type="button" id="record" data-i18n="recordButton"></button>
-      <button type="button" id="reset" class="secondary" data-i18n="resetButton"></button>
+    <div class="section-head">
+      <h2 data-i18n="shortcutHeading"></h2>
+      <button type="button" id="reset" class="link" data-i18n="resetButton"></button>
     </div>
-    <p id="recording-hint" class="hint" data-i18n="recordingHint" hidden></p>
-    <div class="row">
-      <label for="preset" data-i18n="presetLabel"></label>
+    <div id="key-box" class="key-box">
+      <kbd id="current">F18</kbd>
+      <span id="recording-hint" data-i18n="recordingHint" hidden></span>
+    </div>
+    <div class="actions">
+      <button type="button" id="record" data-i18n="recordButton"></button>
+      <!-- 選んだ後も「一覧から選ぶ」の表示に戻す（今のキーは上の枠に出る） -->
       <select id="preset">
-        <option value="">-</option>
-        <option>F13</option>
-        <option>F14</option>
-        <option>F15</option>
-        <option>F16</option>
-        <option>F17</option>
-        <option>F18</option>
-        <option>F19</option>
-        <option>F20</option>
-        <option>F21</option>
-        <option>F22</option>
-        <option>F23</option>
-        <option>F24</option>
+        <option value="" data-i18n="presetLabel" selected hidden></option>
+        <optgroup data-i18n-label="presetGroupExtra">
+          <option>F13</option>
+          <option>F14</option>
+          <option>F15</option>
+          <option>F16</option>
+          <option>F17</option>
+          <option>F18</option>
+          <option>F19</option>
+          <option>F20</option>
+          <option>F21</option>
+          <option>F22</option>
+          <option>F23</option>
+          <option>F24</option>
+        </optgroup>
+        <optgroup data-i18n-label="presetGroupUnused">
+          <option>F2</option>
+          <option>F4</option>
+          <option>F8</option>
+          <option>F9</option>
+        </optgroup>
       </select>
     </div>
   </section>

@@ -7,7 +7,11 @@ document.title = t('optionsTitle');
 for (const el of document.querySelectorAll('[data-i18n]')) {
   el.textContent = t(el.dataset.i18n);
 }
+for (const el of document.querySelectorAll('[data-i18n-label]')) {
+  el.label = t(el.dataset.i18nLabel);
+}
 
+const keyBox = document.getElementById('key-box');
 const currentEl = document.getElementById('current');
 const recordButton = document.getElementById('record');
 const resetButton = document.getElementById('reset');
@@ -16,15 +20,14 @@ const presetSelect = document.getElementById('preset');
 const showToastInput = document.getElementById('show-toast');
 const statusEl = document.getElementById('status');
 
+presetSelect.setAttribute('aria-label', t('presetLabel'));
+
 let recording = false;
 // キーを記録した直後の keyup で、フォーカス中のボタンが押されないようにする（Space など）
 let swallowKeyUp = false;
 
 function render({ shortcut, showToast }) {
   currentEl.textContent = Shortcut.format(shortcut);
-  const isPreset = /^F(1[3-9]|2[0-4])$/.test(shortcut.code) &&
-    !shortcut.ctrlKey && !shortcut.altKey && !shortcut.shiftKey && !shortcut.metaKey;
-  presetSelect.value = isPreset ? shortcut.code : '';
   showToastInput.checked = showToast;
 }
 
@@ -43,8 +46,9 @@ async function saveShortcut(shortcut) {
 function setRecording(on) {
   recording = on;
   recordButton.textContent = t(on ? 'recordingButton' : 'recordButton');
+  currentEl.hidden = on;
   recordingHint.hidden = !on;
-  currentEl.classList.toggle('recording', on);
+  keyBox.classList.toggle('recording', on);
 }
 
 recordButton.addEventListener('click', () => {
@@ -79,9 +83,11 @@ resetButton.addEventListener('click', () => {
 });
 
 presetSelect.addEventListener('change', () => {
-  if (!presetSelect.value) return;
+  const code = presetSelect.value;
+  presetSelect.value = '';
+  if (!code) return;
   setRecording(false);
-  saveShortcut({ ...DEFAULT_SETTINGS.shortcut, code: presetSelect.value, key: presetSelect.value });
+  saveShortcut({ ...DEFAULT_SETTINGS.shortcut, code, key: code });
 });
 
 showToastInput.addEventListener('change', async () => {

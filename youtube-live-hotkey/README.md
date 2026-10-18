@@ -34,8 +34,8 @@ Press your key (F18 by default) and it acts on what the player is doing:
 Open the settings from the extension's toolbar icon (or **Details → Extension options** in `chrome://extensions`).
 The settings page follows Chrome's display language: Japanese if Chrome is in Japanese, English otherwise.
 
-- **Change key**: click it, then press the key you want (combinations with Ctrl, Shift, etc. work too). Press Esc to cancel.
-- **Pick from list**: F13–F24 aren't on regular keyboards, so you can pick them from a list.
+- **Change key**: click it, then press the key you want (combinations with Ctrl, Shift, etc. work too). Click **Cancel** or press Esc to stop.
+- **Pick from list**: F13–F24 aren't on regular keyboards, so you can pick them from a list. The list also has F2, F4, F8, and F9, which Chrome doesn't use.
 - **Reset to F18**: restores the default.
 - **Show a notice**: turns the on-screen notice on or off.
 
