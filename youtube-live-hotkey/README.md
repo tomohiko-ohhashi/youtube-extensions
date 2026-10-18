@@ -41,7 +41,7 @@ The settings page follows Chrome's display language: Japanese if Chrome is in Ja
 
 Changes apply right away to open YouTube tabs.
 
-> If you assign a character key (such as `Q`), it won't trigger while you're typing in chat or the search box.
+> If you assign a character key (such as `Q`) or a key used for editing text (such as Enter or the arrow keys), it won't trigger while you're typing in chat or the search box.
 
 ## Using F13–F24
 
@@ -59,6 +59,7 @@ On a Stream Deck or other macro device, assign the key with its hotkey action.
 
 - Keys only arrive while a YouTube tab is showing in Chrome and the page has focus (not while you're using another app such as OBS).
 - It doesn't work from a popped-out chat window.
+- On a Mac, you may need to hold fn while pressing F2 and other function keys.
 - It may stop working if YouTube changes its player. Internally it clicks `button.ytp-live-badge` (the “Live” button) inside `.ytp-time-display.ytp-live`, which appears during live streams, and the play button `.ytp-play-button`.
 
 ## Files

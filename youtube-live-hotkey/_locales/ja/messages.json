@@ -67,7 +67,7 @@
       "key": { "content": "$1", "example": "F2" }
     }
   },
-  "statusPrintableNote": {
+  "statusTypingKeyNote": {
     "message": "（チャットなどの入力欄では反応しません）"
   },
   "statusToastOn": {
@@ -80,7 +80,10 @@
     "message": "うまく動かないときは"
   },
   "troubleFunctionKeys": {
-    "message": "F13〜F24 は普通のキーボードにはないキーです。Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。Chrome で使われていない F2・F4・F8・F9 も選べます。"
+    "message": "F13〜F24 は普通のキーボードにはないキーです。使うときは Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。"
+  },
+  "troubleMacFn": {
+    "message": "Mac では、F2 などのファンクションキーを fn キーと一緒に押す必要があることがあります。"
   },
   "troubleFocus": {
     "message": "キーが届くのは、Chrome で YouTube のタブを表示していて、そのページにフォーカスがあるときだけです。"
