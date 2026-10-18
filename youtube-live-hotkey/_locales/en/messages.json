@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "YouTube Live Jump"
+    "message": "Live Jump for YouTube"
   },
   "extDescription": {
     "message": "One key (F2 by default) jumps a paused YouTube live stream back to live, and plays or pauses everything else."
   },
   "actionTitle": {
-    "message": "YouTube Live Jump settings"
+    "message": "Live Jump for YouTube settings"
   },
 
   "toastLive": {
@@ -23,7 +23,7 @@
   },
 
   "optionsTitle": {
-    "message": "YouTube Live Jump settings"
+    "message": "Live Jump for YouTube settings"
   },
   "behaviorLivePaused": {
     "message": "Live stream, paused: presses the “Live” button and resumes from the latest point"
@@ -80,7 +80,7 @@
     "message": "Not working?"
   },
   "troubleFunctionKeys": {
-    "message": "F13–F24 aren't on regular keyboards. To use them, send them from a Stream Deck, AutoHotkey, or your keyboard's macro feature."
+    "message": "F13–F24 aren't on regular keyboards. To use them, send them from a macro pad, AutoHotkey, or your keyboard's macro feature."
   },
   "troubleMacFn": {
     "message": "On a Mac, you may need to hold fn while pressing F2 and other function keys."

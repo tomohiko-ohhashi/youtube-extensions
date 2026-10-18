@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "YouTube ライブジャンプ"
+    "message": "ライブジャンプ for YouTube"
   },
   "extDescription": {
     "message": "キーボードのキー（初期設定: F2）で、ライブ配信の一時停止中は「ライブ」ボタンを押して最新の配信位置へ移動し、それ以外は再生 / 一時停止を切り替えます。"
   },
   "actionTitle": {
-    "message": "YouTube ライブジャンプの設定"
+    "message": "ライブジャンプ for YouTube の設定"
   },
 
   "toastLive": {
@@ -23,7 +23,7 @@
   },
 
   "optionsTitle": {
-    "message": "YouTube ライブジャンプの設定"
+    "message": "ライブジャンプ for YouTube の設定"
   },
   "behaviorLivePaused": {
     "message": "ライブ配信で一時停止中: 「ライブ」ボタンを押して、最新の配信位置から再生"
@@ -80,7 +80,7 @@
     "message": "うまく動かないときは"
   },
   "troubleFunctionKeys": {
-    "message": "F13〜F24 は普通のキーボードにはないキーです。使うときは Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。"
+    "message": "F13〜F24 は普通のキーボードにはないキーです。使うときは左手デバイス、AutoHotkey、キーボードのマクロ機能などから送ってください。"
   },
   "troubleMacFn": {
     "message": "Mac では、F2 などのファンクションキーを fn キーと一緒に押す必要があることがあります。"

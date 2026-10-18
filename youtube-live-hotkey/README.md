@@ -1,9 +1,9 @@
-# YouTube Live Jump
+# Live Jump for YouTube
 
 English | [日本語](README.ja.md)
 
 A Chrome extension that lets one keyboard key press the “Live” button or the play button in the YouTube player.
-The default key is **F2**, which Chrome doesn't use. You can switch to another key, such as F13–F24 sent from a Stream Deck, AutoHotkey, or a macro keyboard.
+The default key is **F2**, which Chrome doesn't use. You can switch to another key, such as F13–F24 sent from a macro pad or AutoHotkey.
 
 ## Install
 
@@ -53,7 +53,7 @@ F13–F24 aren't on regular keyboards, so send them from a tool. Choose the same
 ^!l::Send "{F13}"
 ```
 
-On a Stream Deck or other macro device, assign the key with its hotkey action.
+On a macro pad or similar device, assign the key in its settings software.
 
 ## Notes
 
