@@ -3,7 +3,7 @@
 English | [日本語](README.ja.md)
 
 A Chrome extension that lets one keyboard key press the “Live” button or the play button in the YouTube player.
-The default key is **F18**. Send it from a Stream Deck, AutoHotkey, a macro keyboard, or similar.
+The default key is **F2**, which Chrome doesn't use. You can switch to another key, such as F13–F24 sent from a Stream Deck, AutoHotkey, or a macro keyboard.
 
 ## Install
 
@@ -17,7 +17,7 @@ After updating to a new version, click this extension's reload button (↻) in `
 
 ## Usage
 
-Press your key (F18 by default) and it acts on what the player is doing:
+Press your key (F2 by default) and it acts on what the player is doing:
 
 | Player state | What the key does |
 | --- | --- |
@@ -35,25 +35,25 @@ Open the settings from the extension's toolbar icon (or **Details → Extension 
 The settings page follows Chrome's display language: Japanese if Chrome is in Japanese, English otherwise.
 
 - **Change key**: click it, then press the key you want (combinations with Ctrl, Shift, etc. work too). Click **Cancel** or press Esc to stop.
-- **Pick from list**: F13–F24 aren't on regular keyboards, so you can pick them from a list. The list also has F2, F4, F8, and F9, which Chrome doesn't use.
-- **Reset to F18**: restores the default.
+- **Pick from list**: choose from F2, F4, F8, and F9 (which Chrome doesn't use) and F13–F24 (which aren't on regular keyboards).
+- **Reset to F2**: restores the default.
 - **Show a notice**: turns the on-screen notice on or off.
 
 Changes apply right away to open YouTube tabs.
 
 > If you assign a character key (such as `Q`), it won't trigger while you're typing in chat or the search box.
 
-## Sending F18
+## Using F13–F24
 
-F13–F24 aren't on regular keyboards, so send them from a tool.
+F13–F24 aren't on regular keyboards, so send them from a tool. Choose the same key in the settings first.
 
-**AutoHotkey v2** (turns Ctrl + Alt + L into F18)
+**AutoHotkey v2** (turns Ctrl + Alt + L into F13)
 
 ```ahk
-^!l::Send "{F18}"
+^!l::Send "{F13}"
 ```
 
-On a Stream Deck or other macro device, assign F18 with its hotkey action.
+On a Stream Deck or other macro device, assign the key with its hotkey action.
 
 ## Notes
 

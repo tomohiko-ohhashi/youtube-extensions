@@ -20,7 +20,7 @@
       <button type="button" id="reset" class="link" data-i18n="resetButton"></button>
     </div>
     <div id="key-box" class="key-box">
-      <kbd id="current">F18</kbd>
+      <kbd id="current">F2</kbd>
       <span id="recording-hint" data-i18n="recordingHint" hidden></span>
     </div>
     <div class="actions">
@@ -28,6 +28,12 @@
       <!-- 選んだ後も「一覧から選ぶ」の表示に戻す（今のキーは上の枠に出る） -->
       <select id="preset">
         <option value="" data-i18n="presetLabel" selected hidden></option>
+        <optgroup data-i18n-label="presetGroupUnused">
+          <option>F2</option>
+          <option>F4</option>
+          <option>F8</option>
+          <option>F9</option>
+        </optgroup>
         <optgroup data-i18n-label="presetGroupExtra">
           <option>F13</option>
           <option>F14</option>
@@ -41,12 +47,6 @@
           <option>F22</option>
           <option>F23</option>
           <option>F24</option>
-        </optgroup>
-        <optgroup data-i18n-label="presetGroupUnused">
-          <option>F2</option>
-          <option>F4</option>
-          <option>F8</option>
-          <option>F9</option>
         </optgroup>
       </select>
     </div>
