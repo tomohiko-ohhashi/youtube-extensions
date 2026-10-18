@@ -1,11 +1,14 @@
 'use strict';
 
+// キーを押したときの動作:
+//   - ライブ配信で一時停止中 → 「ライブ」ボタンを押す（最新の配信位置へ移動して再生）
+//   - それ以外（ライブ配信で再生中、通常の動画） → 再生ボタンを押す（再生 / 一時停止の切り替え）
+//
 // YouTube のプレーヤーでは、ライブ配信中だけ .ytp-time-display に .ytp-live が付き、
-// その中の button.ytp-live-badge（「ライブ」ボタン）を押すと最新の配信位置へ移動する。
-// 最新位置にいるときや広告の再生中は、このボタンが disabled になる。
+// その中の button.ytp-live-badge が「ライブ」ボタンになる。
 const LIVE_BADGE_SELECTOR = '.ytp-time-display.ytp-live .ytp-live-badge';
-const LIVEHEAD_CLASS = 'ytp-live-badge-is-livehead';
-const JUMP_MESSAGE = 'youtube-live-hotkey:jump';
+const PLAY_BUTTON_SELECTOR = '.ytp-play-button';
+const SHORTCUT_MESSAGE = 'youtube-live-hotkey:shortcut';
 const YOUTUBE_ORIGIN = 'https://www.youtube.com';
 const isTopFrame = window === window.top;
 
@@ -22,25 +25,51 @@ chrome.storage.onChanged.addListener((changes, area) => {
   }
 });
 
-function findLiveBadge() {
-  return document.querySelector(`#movie_player ${LIVE_BADGE_SELECTOR}`) ||
-    document.querySelector(LIVE_BADGE_SELECTOR);
+function isVisible(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.width > 0 && rect.height > 0;
 }
 
-function jumpToLive(badge) {
-  if (!badge) {
-    notify(null, 'ライブ配信が見つかりません');
-    return;
-  }
-  const player = badge.closest('.html5-video-player');
-  if (badge.disabled) {
-    notify(player, badge.classList.contains(LIVEHEAD_CLASS)
-      ? 'すでにライブの最新位置です'
-      : '今はライブへ移動できません');
-    return;
-  }
+// 動画ページ以外に移動しても裏に残っているプレーヤーは操作しない
+function findPlayer() {
+  const players = [document.getElementById('movie_player'), ...document.querySelectorAll('.html5-video-player')];
+  return players.find((player) => player && isVisible(player)) || null;
+}
+
+function pressLiveButton(badge) {
+  // 最新位置にいるときはボタンが無効になっていて、一時停止中はその状態のまま残ることがある。
+  // 押せる状態に戻してから押せば、YouTube 側で最新位置へ移動して再生が始まる。
+  badge.disabled = false;
   badge.click();
-  notify(player, 'ライブへ移動しました');
+}
+
+function togglePlay(player, video) {
+  const button = player.querySelector(PLAY_BUTTON_SELECTOR);
+  if (button) {
+    button.click();
+  } else if (video?.paused) {
+    video.play();
+  } else {
+    video?.pause();
+  }
+}
+
+function handleShortcut(player) {
+  if (!player) {
+    notify(null, 'プレーヤーが見つかりません');
+    return;
+  }
+  const video = player.querySelector('video');
+  const paused = !video || video.paused;
+  const badge = player.querySelector(LIVE_BADGE_SELECTOR);
+  // 広告の再生中は「ライブ」ボタンを押さず、再生 / 一時停止だけを切り替える
+  if (badge && paused && !player.classList.contains('ad-showing')) {
+    pressLiveButton(badge);
+    notify(player, 'ライブへ移動しました');
+  } else {
+    togglePlay(player, video);
+    notify(player, paused ? '再生しました' : '一時停止しました');
+  }
 }
 
 function isEditable(el) {
@@ -56,12 +85,12 @@ function onKeyDown(e) {
   e.preventDefault();
   e.stopImmediatePropagation();
 
-  const badge = findLiveBadge();
-  if (badge || isTopFrame) {
-    jumpToLive(badge);
+  const player = findPlayer();
+  if (player || isTopFrame) {
+    handleShortcut(player);
   } else {
     // ライブチャット欄（iframe）にフォーカスがあるときは、親ページのプレーヤーに任せる
-    window.top.postMessage({ type: JUMP_MESSAGE }, YOUTUBE_ORIGIN);
+    window.top.postMessage({ type: SHORTCUT_MESSAGE }, YOUTUBE_ORIGIN);
   }
 }
 
@@ -69,8 +98,8 @@ window.addEventListener('keydown', onKeyDown, true);
 
 if (isTopFrame) {
   window.addEventListener('message', (e) => {
-    if (e.origin !== YOUTUBE_ORIGIN || e.data?.type !== JUMP_MESSAGE) return;
-    jumpToLive(findLiveBadge());
+    if (e.origin !== YOUTUBE_ORIGIN || e.data?.type !== SHORTCUT_MESSAGE) return;
+    handleShortcut(findPlayer());
   });
 }
 

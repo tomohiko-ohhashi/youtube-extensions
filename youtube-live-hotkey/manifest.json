@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "YouTube ライブジャンプ",
-  "version": "1.0.0",
-  "description": "キーボードのキー（初期設定: F18）で YouTube ライブの「ライブ」ボタンを押し、最新の配信位置へ移動します。",
+  "version": "1.1.0",
+  "description": "キーボードのキー（初期設定: F18）で、ライブ配信の一時停止中は「ライブ」ボタンを押して最新の配信位置へ移動し、それ以外は再生 / 一時停止を切り替えます。",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
