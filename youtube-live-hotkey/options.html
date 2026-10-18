@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>YouTube ライブジャンプの設定</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1>YouTube ライブジャンプ</h1>
+  <p class="lead">ライブ配信を見ているときにこのキーを押すと、プレーヤー左下の「ライブ」ボタンを押したときと同じように最新の配信位置へ移動します。</p>
+
+  <section>
+    <h2>ショートカットキー</h2>
+    <div class="row">
+      <kbd id="current">F18</kbd>
+      <button type="button" id="record">キーを変更</button>
+      <button type="button" id="reset" class="secondary">F18 に戻す</button>
+    </div>
+    <p id="recording-hint" class="hint" hidden>割り当てたいキーを押してください（Esc でキャンセル）</p>
+    <div class="row">
+      <label for="preset">一覧から選ぶ</label>
+      <select id="preset">
+        <option value="">-</option>
+        <option>F13</option>
+        <option>F14</option>
+        <option>F15</option>
+        <option>F16</option>
+        <option>F17</option>
+        <option>F18</option>
+        <option>F19</option>
+        <option>F20</option>
+        <option>F21</option>
+        <option>F22</option>
+        <option>F23</option>
+        <option>F24</option>
+      </select>
+    </div>
+  </section>
+
+  <section>
+    <label class="check">
+      <input type="checkbox" id="show-toast">
+      キーを押したときに画面に通知を表示する
+    </label>
+  </section>
+
+  <p id="status" class="status" role="status"></p>
+
+  <details>
+    <summary>うまく動かないときは</summary>
+    <ul>
+      <li>F13〜F24 は普通のキーボードにはないキーです。Stream Deck、AutoHotkey、キーボードのマクロ機能などから送ってください。</li>
+      <li>キーが届くのは、Chrome で YouTube のタブを表示していて、そのページにフォーカスがあるときだけです。</li>
+      <li>拡張機能を入れる前から開いていた YouTube のタブは、一度再読み込みしてください。</li>
+      <li>すでに最新の位置にいるときや広告の再生中は、YouTube 側でボタンが押せない状態になっているため移動しません。</li>
+    </ul>
+  </details>
+
+  <script src="common.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
