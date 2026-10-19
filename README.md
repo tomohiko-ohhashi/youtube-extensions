@@ -11,7 +11,9 @@ YouTube 用の Chrome 拡張機能を集めたリポジトリです。
 
 **日本語**: キーひとつ（初期設定は F2）で、ライブ配信の一時停止中は「ライブ」ボタンを押して最新の位置から再生し、それ以外は再生 / 一時停止を切り替えます。
 
-➡️ Install and usage / インストールと使い方: [`youtube-live-hotkey/`](youtube-live-hotkey/)
+➡️ **Chrome Web Store / Chrome ウェブストア**: [Live Jump for YouTube](https://chromewebstore.google.com/detail/live-jump-for-youtube/ncgnmiolcmjlalncjfekceopmmenganl)
+
+➡️ Usage and manual install / 使い方と手動インストール: [`youtube-live-hotkey/`](youtube-live-hotkey/)
 
 ## Repository layout / フォルダ構成
 
