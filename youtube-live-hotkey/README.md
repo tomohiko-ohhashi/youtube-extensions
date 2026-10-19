@@ -9,9 +9,9 @@ The default key is **F2**, which Chrome doesn't use. You can switch to another k
 
 ### Install
 
-**Chrome Web Store**: coming soon.
+**Chrome Web Store (recommended)**: open [Live Jump for YouTube](https://chromewebstore.google.com/detail/live-jump-for-youtube/ncgnmiolcmjlalncjfekceopmmenganl) and click “Add to Chrome”. Updates are installed automatically.
 
-**Manual install**
+**Manual install** (for development)
 
 1. Download this repository (**Code → Download ZIP**) and unzip it.
 2. Open `chrome://extensions` in Chrome.
@@ -19,7 +19,7 @@ The default key is **F2**, which Chrome doesn't use. You can switch to another k
 4. Click “Load unpacked” and choose the `youtube-live-hotkey` folder.
 5. Reload any YouTube tabs that were already open.
 
-After updating to a new version, click this extension's reload button (↻) in `chrome://extensions`, then reload your YouTube tabs.
+If you installed it manually, after updating to a new version click this extension's reload button (↻) in `chrome://extensions`, then reload your YouTube tabs.
 
 ### Usage
 
@@ -78,9 +78,9 @@ On a macro pad or similar device, assign the key in its settings software.
 
 ### インストール
 
-**Chrome ウェブストア**: 公開準備中です。
+**Chrome ウェブストア（おすすめ）**: [ライブジャンプ for YouTube](https://chromewebstore.google.com/detail/live-jump-for-youtube/ncgnmiolcmjlalncjfekceopmmenganl) を開いて「Chrome に追加」を押します。新しい版は自動で更新されます。
 
-**手動でインストールする**
+**手動でインストールする**（開発用）
 
 1. このリポジトリをダウンロード（**Code → Download ZIP**）して展開します。
 2. Chrome で `chrome://extensions` を開きます。
@@ -88,7 +88,7 @@ On a macro pad or similar device, assign the key in its settings software.
 4. 「パッケージ化されていない拡張機能を読み込む」を押して、`youtube-live-hotkey` フォルダを選びます。
 5. すでに開いている YouTube のタブは、一度再読み込みしてください。
 
-新しい版に更新したときは、`chrome://extensions` でこの拡張機能の再読み込みボタン（↻）を押してから、YouTube のタブを再読み込みしてください。
+手動でインストールした場合は、新しい版に更新したときに `chrome://extensions` でこの拡張機能の再読み込みボタン（↻）を押してから、YouTube のタブを再読み込みしてください。
 
 ### 使い方
 
